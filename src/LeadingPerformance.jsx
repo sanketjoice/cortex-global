@@ -1,5 +1,7 @@
 import React from "react";
-
+import mobilescreen from "./assets/mobilescreen.png";
+import mobileimg from "./assets/Picture7.png";
+import greenpoint from "./assets/greenpoint.png";
 const LeadingPerformance = () => {
   return (
     <section className="flex flex-col lg:flex-row items-center justify-between px-8 lg:px-28 py-16 bg-white">
@@ -56,7 +58,7 @@ const LeadingPerformance = () => {
           </div>
 
           {/* Processing Time Circle */}
-          <div className="flex flex-col items-center">
+          <div className="flex flex-col ml-[70px] items-center">
             <span className="text-xl font-bold mb-5">Processing Time</span>
             <div className="relative w-40 h-40">
               <svg
@@ -92,22 +94,40 @@ const LeadingPerformance = () => {
         </div>
       </div>
 
-      {/* Right Side Image */}
-      <div className="lg:w-1/2 flex justify-center mt-12 lg:mt-0">
-        <img
-          src={"/path-to-your-imported-image"}
-          alt="Performance Analysis"
-          className="max-w-md w-full"
-        />
+      {/* Right Content */}
+      <div className="lg:w-1/2 mt-[150px] flex flex-row items-center relative lg:mt-0">
+        <div className="flex flex-col">
+          {/* Mobile Analysis Image */}
+          <img
+            src={mobilescreen}
+            alt="Mobile Analysis"
+            className="w-[480px] h-[830px] relative rounded-xl"
+          />
+          <img
+            src={mobileimg}
+            alt="Mobile Analysis"
+            className="max-w-xs mt-[60px] ml-[80px] rounded-xl absolute shadow-lg"
+          />
+          <img
+            src={greenpoint}
+            alt=""
+            className="absolute w-[120px] ml-[210px] mt-[120px]"
+          />
+        </div>
+
         {/* Right-side text with yellow highlight */}
-        <div className="mt-6 text-lg font-medium text-left relative">
+        <div className="mt-[-100px] text-lg font-medium text-left relative">
           <div className="absolute left-[-20px] top-0 h-[300px] w-1 bg-[#79DD6B]"></div>
-          <p>Take Photo</p>
-          <p>Damage Detection</p>
-          <p>Analysis</p>
-          <p>Cost Estimations</p>
-          <p>Totals</p>
-          <p>Recommendations</p>
+
+          <div className="mt-[50px]">
+            {" "}
+            <p>Industry Leading</p>
+            <p>Large Database</p>
+            <p>Lowest Cost</p>
+            <p>Safe & Secure</p>
+            <p>Integrations</p>
+            <p>Highest Performance</p>
+          </div>
         </div>
       </div>
     </section>

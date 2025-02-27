@@ -1,21 +1,26 @@
+import mobileimg from "./assets/mobileimg.png";
+import mobilescreen from "./assets/mobilescreen.png";
+import yellowpoint from "./assets/yellowpoint.png";
+
 export default function TryDemoSection() {
   return (
     <section className="flex flex-col lg:flex-row items-center justify-between py-16 px-8 lg:px-28">
       {/* Left Content */}
-      <div className="lg:w-1/2">
-        <h2 className="text-4xl font-bold">
+      <div className="ml-[0px]">
+        <h2 className="text-7xl text-center font-semibold">
           Try Our <span className="relative">Demo</span>
           <span className="text-[#063edb]">.</span>
         </h2>
-        <p className="text-[#063edb] font-medium mt-2">
+        <p className="text-[#063edb] mb-[100px] text-2xl text-center font-medium my-5">
           The Most Advanced Vehicle Damage Detection
         </p>
 
         {/* Sample Images Grid */}
-        <div className="grid grid-cols-4 gap-2 mt-6">
+        <p className="text-lg font-semibold">Test With Sample Image</p>
+        <div className="grid grid-cols-3 gap-3 mt-6">
           {/* Placeholder images */}
           {[...Array(12)].map((_, index) => (
-            <div key={index} className="w-20 h-20 bg-gray-300 rounded-lg"></div>
+            <div key={index} className="w-30 h-14 bg-gray-300 rounded-lg"></div>
           ))}
         </div>
 
@@ -29,28 +34,44 @@ export default function TryDemoSection() {
       </div>
 
       {/* Right Content */}
-      <div className="lg:w-1/2 flex flex-col items-center relative mt-10 lg:mt-0">
-        {/* Mobile Analysis Image */}
-        <img
-          src="/path-to-right-side-image.png"
-          alt="Mobile Analysis"
-          className="max-w-xs rounded-xl shadow-lg"
-        />
+      <div className="lg:w-1/2 mt-[150px] flex flex-row items-center relative lg:mt-0">
+        <div className="flex flex-col">
+          {/* Mobile Analysis Image */}
+          <img
+            src={mobilescreen}
+            alt="Mobile Analysis"
+            className="w-[480px] h-[830px] relative rounded-xl"
+          />
+          <img
+            src={mobileimg}
+            alt="Mobile Analysis"
+            className="max-w-xs mt-[60px] ml-[80px] rounded-xl absolute shadow-lg"
+          />
+          <img
+            src={yellowpoint}
+            alt=""
+            className="absolute w-[100px] ml-[160px] mt-[70px]"
+          />
+          {/* Call to Action Button */}
+          <button className="mt-[-90px] bg-[#3a3aea] text-white px-6 w-[200px] self-center rounded-lg h-[40px] hover:cursor-pointer font-medium">
+            Try Our Demo
+          </button>
+        </div>
 
         {/* Right-side text with yellow highlight */}
-        <div className="mt-6 text-lg font-medium text-left relative">
+        <div className="mt-[-100px] text-lg font-medium text-left relative">
           <div className="absolute left-[-20px] top-0 h-[300px] w-1 bg-yellow-200"></div>
-          <p>Take Photo</p>
-          <p>Damage Detection</p>
-          <p>Analysis</p>
-          <p>Cost Estimations</p>
-          <p>Totals</p>
-          <p>Recommendations</p>
+
+          <div className="mt-[50px]">
+            {" "}
+            <p>Take Photo</p>
+            <p>Damage Detection</p>
+            <p>Analysis</p>
+            <p>Cost Estimations</p>
+            <p>Totals</p>
+            <p>Recommendations</p>
+          </div>
         </div>
-        {/* Call to Action Button */}
-        <button className="mt-6 bg-[#3a3aea] text-white px-6 py- rounded-lg h-[35px] font-medium">
-          Try Our Demo
-        </button>
       </div>
     </section>
   );

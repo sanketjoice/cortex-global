@@ -5,6 +5,12 @@ import DamageDetectionSection from "./DamageDetectionSection";
 import TryDemoSection from "./TryDemoSection";
 import LeadingPerformance from "./LeadingPerformance";
 import FeaturesSection from "./FeaturesSection";
+import CoverageSection from "./CoverageSection";
+import BusinessApplications from "./BusinessApllications";
+import BenefitsForCarRentals from "./BenefitsForCarRentals";
+import TechnicalImplementation from "./TechnicalImplementation";
+import CortexSection from "./CortexSection";
+import ContactUs from "./ContactUs";
 
 function App() {
   return (
@@ -14,6 +20,12 @@ function App() {
       <TryDemoSection />
       <LeadingPerformance />
       <FeaturesSection />
+      <CoverageSection />
+      <BusinessApplications />
+      <BenefitsForCarRentals />
+      <TechnicalImplementation />
+      <CortexSection />
+      <ContactUs />
     </div>
   );
 }
