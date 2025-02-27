@@ -1,6 +1,7 @@
 import vehicleInsp from "./assets/fingerpoint.png";
 import cardent from "./assets/cardent.png";
 import carbump from "./assets/carbump.png";
+import React from "react";
 
 export default function DamageDetectionSection() {
   return (

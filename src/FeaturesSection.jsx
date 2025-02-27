@@ -1,4 +1,5 @@
 import mobile from "./assets/Picture1.png";
+import React from "react";
 
 export default function FeaturesSection() {
   return (

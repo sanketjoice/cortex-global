@@ -1,5 +1,6 @@
 import crashPic from "./assets/Picture15.png";
 import purpleCard from "./assets/Picture16.png";
+import React from "react";
 
 export default function BenefitsForCarRentals() {
   return (

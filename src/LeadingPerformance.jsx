@@ -2,6 +2,7 @@ import React from "react";
 import mobilescreen from "./assets/mobilescreen.png";
 import mobileimg from "./assets/Picture7.png";
 import greenpoint from "./assets/greenpoint.png";
+
 const LeadingPerformance = () => {
   return (
     <section className="flex flex-col lg:flex-row items-center justify-between px-8 lg:px-28 py-16 bg-white">

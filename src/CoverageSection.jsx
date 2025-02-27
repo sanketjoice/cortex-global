@@ -1,6 +1,7 @@
 import exterior from "./assets/Picture10.png";
 import interior from "./assets/Picture11.png";
 import mechanical from "./assets/Picture12.png";
+import React from "react";
 
 export default function CoverageSection() {
   return (

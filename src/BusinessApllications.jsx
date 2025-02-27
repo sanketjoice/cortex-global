@@ -1,6 +1,7 @@
 import logo from "./assets/symbols and logos/logo.png";
 import phone1 from "./assets/Picture13.png";
 import phone2 from "./assets/Picture14.png";
+import React from "react";
 
 export default function BusinessApplications() {
   return (

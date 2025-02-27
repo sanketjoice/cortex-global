@@ -1,6 +1,7 @@
 import mobileimg from "./assets/mobileimg.png";
 import mobilescreen from "./assets/mobilescreen.png";
 import yellowpoint from "./assets/yellowpoint.png";
+import React from "react";
 
 export default function TryDemoSection() {
   return (
