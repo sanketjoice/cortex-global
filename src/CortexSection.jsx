@@ -44,7 +44,7 @@ const CortexSection = () => {
       <div className="lg:w-1/2 pl-20">
         <h2 className="text-6xl font-semibold leading-tight">
           <span className="text-yellow-400">
-            <img src={quotes} alt="" className="w-[70px]" />
+            <img src={quotes} alt="quotes" className="w-[70px]" />
           </span>
           Cortex fast-tracks
           <br /> your AI <br /> development.

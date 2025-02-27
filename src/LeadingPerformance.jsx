@@ -110,7 +110,7 @@ const LeadingPerformance = () => {
           />
           <img
             src={greenpoint}
-            alt=""
+            alt="greenpoint"
             className="absolute w-[120px] ml-[210px] mt-[120px]"
           />
         </div>
@@ -120,7 +120,6 @@ const LeadingPerformance = () => {
           <div className="absolute left-[-20px] top-0 h-[300px] w-1 bg-[#79DD6B]"></div>
 
           <div className="mt-[50px]">
-            {" "}
             <p>Industry Leading</p>
             <p>Large Database</p>
             <p>Lowest Cost</p>

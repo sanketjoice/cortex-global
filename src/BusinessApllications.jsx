@@ -46,7 +46,7 @@ export default function BusinessApplications() {
         <div className="">
           <img
             src={logo}
-            alt=""
+            alt="logo"
             className="absolute ml-[120px] mt-[65px] w-[170px]"
           />
           <img src={phone1} alt="Automated Reporting" className="w-[400px]" />

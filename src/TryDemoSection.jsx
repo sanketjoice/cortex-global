@@ -49,7 +49,7 @@ export default function TryDemoSection() {
           />
           <img
             src={yellowpoint}
-            alt=""
+            alt="yellow"
             className="absolute w-[100px] ml-[160px] mt-[70px]"
           />
           {/* Call to Action Button */}
@@ -63,7 +63,6 @@ export default function TryDemoSection() {
           <div className="absolute left-[-20px] top-0 h-[300px] w-1 bg-yellow-200"></div>
 
           <div className="mt-[50px]">
-            {" "}
             <p>Take Photo</p>
             <p>Damage Detection</p>
             <p>Analysis</p>

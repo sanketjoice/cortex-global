@@ -9,7 +9,7 @@ const TechnicalImplementation = () => {
       <div className="absolute right-0">
         <img
           src={pinkCard}
-          alt=""
+          alt="card"
           className="w-[900px] h-[900px] flex mt-[290px] object-cover"
         />
       </div>

@@ -8,7 +8,7 @@ const ContactUs = () => {
 
       <img
         src={yellowCard}
-        alt=""
+        alt="card"
         className="w-[700px] h-screen bg-[#3a3aea]"
       />
 
