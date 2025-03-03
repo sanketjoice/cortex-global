@@ -265,6 +265,7 @@ export default function HeroSection() {
           onClose={() => setIsSlideoutOpen(false)}
           activeDemo={selectedDemo}
           theme="cortex" // or "antei", depending on your theme
+          onRequestDemo={() => setModalOpen(true)} // Pass the callback to open the contact form
         />
       )}
     </div>
