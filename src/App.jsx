@@ -14,7 +14,7 @@ import ContactUs from "./ContactUs";
 
 function App() {
   return (
-    <div>
+    <div className="max-w-[1660px] m-auto">
       <HeroSection />
       <DamageDetectionSection />
       <TryDemoSection />

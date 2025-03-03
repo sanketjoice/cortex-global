@@ -7,7 +7,7 @@ export default function FeaturesSection() {
       <div className="max-w-7xl mx-uto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         {/* Left Side Content */}
         <div>
-          <div className="bg-[#cb6ce6] text-white px-5 text-center py-1 rounded-full w-[150px] h-[40px] text-xl font-semibold">
+          <div className="bg-[#cb6ce6] overflow-hidden text-white px-5 text-center py-1 rounded-full w-[150px] h-[40px] text-xl font-semibold">
             AI-Powered
           </div>
           <br />

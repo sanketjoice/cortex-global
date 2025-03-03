@@ -95,7 +95,7 @@ const DemoDetailSlideOut = ({
   if (!isOpen || !activeDemo) return null;
 
   return (
-    <div className="fixed inset-0 z-50 overflow-hidden">
+    <div className="fixed inset-0 max-w-[1660px] m-auto z-50 overflow-hidden">
       {/* Backdrop */}
       <div className="absolute inset-0 bg-black/50" onClick={onClose}></div>
 

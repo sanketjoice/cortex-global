@@ -5,7 +5,7 @@ import React from "react";
 
 export default function DamageDetectionSection() {
   return (
-    <section className="flex flex-col mt-80 mb-60 lg:flex-row items-center justify-between px-10 lg:px-28 py-">
+    <section className="flex flex-col lg:mt-80 mb-60 lg:flex-row items-center justify-between px-10 lg:px-28 py-0">
       {/* Left Content */}
       <div className="lg:w-1/2 text-left">
         <h2 className="text-7xl font-semibold leading-tight relative">

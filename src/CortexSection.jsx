@@ -7,51 +7,49 @@ import quotes from "./assets/Picture23.png";
 
 const CortexSection = () => {
   return (
-    <section className="relative flex flex-col lg:flex-row items-center justify-between bg-[#3a3aea] text-white min-h-screen">
+    <section className="relative flex flex-col lg:flex-row items-center justify-between bg-[#3a3aea] text-white py-16">
       {/* Left Side - Image Grid */}
-      <div className="grid grid-cols-2 grid-rows-2 relative w-1/2">
-        <div className=" flex justify-center items-center p-0">
+      <div className="grid grid-cols-2 grid-rows-2 w-5/12 px-8">
+        <div className="flex justify-center items-center p-2">
           <img
             src={img1}
             alt="Person 1"
-            className="w-full h-full object-cover"
+            className="w-[90%] h-auto object-cover rounded-lg"
           />
         </div>
-        <div className="bg-yellow-400 flex justify-center items-center rounded-full overflow-hidden">
+        <div className="bg-yel flex justify-center items-center rounded-full overflow-hidden p-2">
           <img
             src={img2}
             alt="Person 2"
-            className="w-full h-full object-cover"
+            className="w-[90%] h-auto objectover rounded-full"
           />
         </div>
-        <div className=" flex justify-center items-center rounded-full overflow-hidden">
+        <div className="flex justify-center items-center rounded-full overflow-hidden p-2">
           <img
             src={img3}
             alt="Person 3"
-            className="w-full h-full object-cover"
+            className="w-[90%] h-auto object-cov rounded-full"
           />
         </div>
-        <div className="flex justify-center items-center p-">
+        <div className="flex justify-center items-center p-2">
           <img
             src={img4}
-            alt="Person 3"
-            className="w-full h-full object-cover"
+            alt="Person 4"
+            className="w-[90%] h-auto object-cover rounded-lg"
           />
         </div>
       </div>
 
       {/* Right Side - Text Content */}
-      <div className="lg:w-1/2 pl-20">
-        <h2 className="text-6xl font-semibold leading-tight">
+      <div className="lg:w-6/12 pl-16">
+        <h2 className="text-5xl font-semibold leading-tight">
           <span className="text-yellow-400">
-            <img src={quotes} alt="quotes" className="w-[70px]" />
+            <img src={quotes} alt="quotes" className="w-[60px]" />
           </span>
-          Cortex fast-tracks
-          <br /> your AI <br /> development.
+          Cortex fast-tracks your AI <br /> development.
         </h2>
-        <p className="text-6xl font-bold mt-4">
-          <span className="text-red-500">Don't delay innovation</span>
-          <span>.</span>
+        <p className="text-5xl font-bold mt-4">
+          <span className="text-red-500">Don't delay innovation</span>.
         </p>
       </div>
     </section>

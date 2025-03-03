@@ -21,12 +21,12 @@ const ContactFormModal = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-white/30 backdrop-blur-sm z-50">
+    <div className="fixed inset-0 flex items-center justify-center max-w-[1660px] bg-white/30 backdrop-blur-sm z-50">
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         exit={{ opacity: 0, scale: 0.8 }}
-        className="bg-white border border-gray-200 shadow-2xl rounded-xl p-6 w-full max-w-md relative"
+        className="bg-white border max-w-md border-gray-200 shadow-2xl rounded-xl p-6 w-full relative"
       >
         <button
           onClick={onClose}
@@ -264,8 +264,8 @@ export default function HeroSection() {
           isOpen={isSlideoutOpen}
           onClose={() => setIsSlideoutOpen(false)}
           activeDemo={selectedDemo}
-          theme="cortex" // or "antei", depending on your theme
-          onRequestDemo={() => setModalOpen(true)} // Pass the callback to open the contact form
+          theme="cortex"
+          onRequestDemo={() => setModalOpen(true)}
         />
       )}
     </div>
