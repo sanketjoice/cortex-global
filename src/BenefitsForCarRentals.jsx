@@ -11,7 +11,7 @@ export default function BenefitsForCarRentals() {
     if (!isOpen) return null;
 
     return (
-      <div className="fixed inset-0 flex items-center justify-center max-w-[1660px] bg-white/30 backdrop-blur-sm z-50">
+      <div className="fixed  inset-0 flex items-center justify-center max-w-[1660px] bg-white/30 backdrop-blur-sm z-50">
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -91,7 +91,7 @@ export default function BenefitsForCarRentals() {
     );
   };
   return (
-    <section className="flex flex-col lg:flex-row items-center lg:items-start px-6 lg:pr-28 py-12 mb-[100px]">
+    <section className="flex flex-col lg:flex-row items-center lg:items-start ml-[-110px] lg:pr-28 py-12 mb-[100px]">
       {/* Left Side Image with Purple Shape */}
       <div className="relative w-full lg:w-1/2 flex justify-center">
         <img src={purpleCard} alt="" className="w-[400px] absolute" />

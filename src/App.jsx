@@ -9,8 +9,9 @@ import CoverageSection from "./CoverageSection";
 import BusinessApplications from "./BusinessApllications";
 import BenefitsForCarRentals from "./BenefitsForCarRentals";
 import TechnicalImplementation from "./TechnicalImplementation";
-import CortexSection from "./CortexSection";
-import ContactUs from "./ContactUs";
+// import CortexSection from "./CortexSection";
+// import ContactUs from "./ContactUs";
+import CortexContactSection from "./CortexContactSection";
 
 function App() {
   return (
@@ -24,8 +25,9 @@ function App() {
       <BusinessApplications />
       <BenefitsForCarRentals />
       <TechnicalImplementation />
-      <CortexSection />
-      <ContactUs />
+      <CortexContactSection />
+      {/* <CortexSection />
+      <ContactUs /> */}
     </div>
   );
 }

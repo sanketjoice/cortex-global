@@ -15,12 +15,9 @@ import sampleImage9 from "./assets/Picture27.png";
 import sampleImage10 from "./assets/Picture28.png";
 import sampleImage11 from "./assets/Picture29.png";
 import sampleImage12 from "./assets/Picture30.png";
-import DemoDetailSlideOut from "./DemoDetailSlideOut";
 import mobile from "./assets/Picture1.png";
 
 export default function TryDemoSection() {
-  const [isSlideoutOpen, setIsSlideoutOpen] = useState(false);
-  const [selectedDemo, setSelectedDemo] = useState(null);
   const [modalOpen, setModalOpen] = useState(false);
 
   const sampleImages = [
@@ -38,41 +35,11 @@ export default function TryDemoSection() {
     sampleImage12,
   ];
 
-  const handleDemoClick = () => {
-    console.log("Button clicked"); // Debugging
-    const demoData = {
-      title: "Custom AI Demo",
-      description:
-        "Upload your own data and see how our AI can provide insights tailored to your needs.",
-      apiEndpoint: "/api/demo/custom-analysis",
-      sampleImages: [
-        { id: "sample1", src: sampleImage1, alt: "Rear door panel damage" },
-        { id: "sample2", src: sampleImage2, alt: "Wheel rim damage" },
-        { id: "sample3", src: sampleImage3, alt: "Clean front view" },
-        { id: "sample4", src: sampleImage4, alt: "Bumper scrape damage" },
-        { id: "sample5", src: sampleImage5, alt: "Bumper corner damage" },
-        { id: "sample6", src: sampleImage6, alt: "Door edge damage" },
-      ],
-      technologyShowcase: [
-        {
-          image: mobile,
-          title: "Custom AI Processing",
-          description:
-            "Analyze your unique dataset using our AI-powered system with real-time insights and recommendations.",
-          deviceType: "web",
-        },
-      ],
-      analysisResults: null, // Customize as needed
-    };
-
-    setSelectedDemo(demoData);
-    setIsSlideoutOpen(true);
-    console.log("isSlideoutOpen set to:", true); // Debugging
-    console.log("dsfsfsdf");
-  };
-
   return (
-    <section className="flex flex-col lg:flex-row items-center justify-between py-16 px-8 lg:px-28">
+    <section
+      id="demo-section"
+      className="flex flex-col lg:flex-row items-center justify-between py-16 px-8 lg:px-28"
+    >
       {/* Left Content */}
       <div className="ml-[0px]">
         <h2 className="text-7xl text-center font-semibold">
@@ -132,7 +99,7 @@ export default function TryDemoSection() {
           {/* Call to Action Button */}
           <button
             className="mt-[-80px] z-50 hover:cursor-pointer bg-[#3a3aea] text-white px-6 w-[200px] self-center rounded-lg h-[40px] font-medium"
-            onClick={handleDemoClick}
+            onClick={() => setModalOpen(true)}
           >
             Try Our Demo
           </button>
@@ -153,20 +120,7 @@ export default function TryDemoSection() {
         </div>
       </div>
 
-      {/* Render the DemoDetailSlideOut component conditionally */}
-      {isSlideoutOpen && selectedDemo && (
-        <DemoDetailSlideOut
-          isOpen={isSlideoutOpen}
-          onClose={() => {
-            setIsSlideoutOpen(false);
-            console.log("Slideout closed");
-          }}
-          activeDemo={selectedDemo}
-          theme="cortex" // or "antei", depending on your theme
-          onRequestDemo={() => setModalOpen(true)} // Now modalOpen is defined
-        />
-      )}
-
+      {/* Contact Form Modal */}
       {modalOpen && (
         <div className="fixed inset-0 flex items-center justify-center max-w-[1660px] bg-white/30 backdrop-blur-sm z-50">
           <div className="bg-white border max-w-md border-gray-200 shadow-2xl rounded-xl p-6 w-full relative">

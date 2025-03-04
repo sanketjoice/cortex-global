@@ -12,8 +12,6 @@ import sampleImage3 from "./assets/front-clean.webp";
 import sampleImage4 from "./assets/bumper-scrape.jpeg";
 import sampleImage5 from "./assets/bumper-corner.jpeg";
 import sampleImage6 from "./assets/door-ding.png";
-import analysisResult from "./assets/bumper-corner.jpeg";
-import DemoDetailSlideOut from "./DemoDetailSlideOut";
 import mobile from "./assets/Picture1.png";
 
 // Contact Form Modal Component
@@ -101,40 +99,16 @@ const ContactFormModal = ({ isOpen, onClose }) => {
   );
 };
 
-// Hero Section Component
-const demoData = {
-  "vd-001": {
-    vehicle_area: "Rear Door Panel and Wheel Arch",
-    damages: [
-      {
-        type: "Paint scratches",
-        severity: "Moderate to Severe",
-        confidence: 0.95,
-        estimated_cost: 600.0,
-      },
-      {
-        type: "Paint transfer",
-        severity: "Moderate",
-        confidence: 0.9,
-        estimated_cost: 100.0,
-      },
-      {
-        type: "Dented body panel",
-        severity: "Minor",
-        confidence: 0.9,
-        estimated_cost: 150.0,
-      },
-    ],
-    total_estimated_cost: 850.0,
-    recommendation:
-      "Recommended for professional repair. Moderate to severe paint scratches and minor dent.",
-  },
-};
-
 export default function HeroSection() {
   const [modalOpen, setModalOpen] = useState(false);
-  const [isSlideoutOpen, setIsSlideoutOpen] = useState(false);
-  const [selectedDemo, setSelectedDemo] = useState(null);
+
+  // Function to scroll to the demo section
+  const scrollToDemoSection = () => {
+    const demoSection = document.getElementById("demo-section");
+    if (demoSection) {
+      demoSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <div className="bg-white min-h-screen relative flex flex-col items-center px-10 md:px-16 lg:px-24 py-">
@@ -181,46 +155,7 @@ export default function HeroSection() {
         </p>
         <button
           className="bg-[#3a3aea] hover:cursor-pointer w-[200px] h-[50px] text-white px-6 py-2 rounded-2xl text-xl font-medium mt-8"
-          onClick={() => {
-            setSelectedDemo({
-              title: "Vehicle Damage Assessment",
-              description:
-                "Near-instant vehicle damage detection and assessment for insurance claims & car rental companies.",
-              apiEndpoint: "/api/demo/vehicle-damage/analyze",
-              sampleImages: [
-                {
-                  id: "vd-001",
-                  src: sampleImage1,
-                  alt: "Rear door panel damage",
-                },
-                { id: "vd-002", src: sampleImage2, alt: "Wheel rim damage" },
-                { id: "vd-003", src: sampleImage3, alt: "Clean front view" },
-                {
-                  id: "vd-004",
-                  src: sampleImage4,
-                  alt: "Bumper scrape damage",
-                },
-                {
-                  id: "vd-005",
-                  src: sampleImage5,
-                  alt: "Bumper corner damage",
-                },
-                { id: "vd-006", src: sampleImage6, alt: "Door edge damage" },
-              ],
-              technologyShowcase: [
-                {
-                  image: mobile,
-                  title: "Mobile Inspection App",
-                  description:
-                    "Near-instantly assess vehicle damage with our AI-powered mobile application. Features real-time damage detection and guided inspection workflow.",
-                  deviceType: "phone",
-                },
-                // Add more showcase items
-              ],
-              analysisResults: demoData["vd-001"], // Select a specific entry
-            });
-            setIsSlideoutOpen(true); // Open the slide-out
-          }}
+          onClick={scrollToDemoSection}
         >
           Try Our Demo
         </button>
@@ -257,17 +192,6 @@ export default function HeroSection() {
         isOpen={modalOpen}
         onClose={() => setModalOpen(false)}
       />
-
-      {/* Demo Detail Slide-out */}
-      {isSlideoutOpen && selectedDemo && (
-        <DemoDetailSlideOut
-          isOpen={isSlideoutOpen}
-          onClose={() => setIsSlideoutOpen(false)}
-          activeDemo={selectedDemo}
-          theme="cortex"
-          onRequestDemo={() => setModalOpen(true)}
-        />
-      )}
     </div>
   );
 }
