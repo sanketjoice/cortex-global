@@ -18,22 +18,218 @@ import sampleImage12 from "./assets/Picture30.png";
 import mobile from "./assets/Picture1.png";
 
 export default function TryDemoSection() {
-  const [modalOpen, setModalOpen] = useState(false);
+  const [contactModalOpen, setContactModalOpen] = useState(false);
+  const [imageModalOpen, setImageModalOpen] = useState(false);
+  const [selectedImage, setSelectedImage] = useState(null);
 
-  const sampleImages = [
-    sampleImage1,
-    sampleImage2,
-    sampleImage3,
-    sampleImage4,
-    sampleImage5,
-    sampleImage6,
-    sampleImage7,
-    sampleImage8,
-    sampleImage9,
-    sampleImage10,
-    sampleImage11,
-    sampleImage12,
+  const sampleImagesData = [
+    {
+      src: sampleImage1,
+      scope: "Rear Door Panel",
+      damages: [
+        {
+          name: "Door edge dings/dents",
+          severity: "Minor",
+          confidence: "80.0%",
+          cost: "$100.00",
+        },
+      ],
+      totalCost: "$100.00",
+      recommendation: "Very minor damage detected. Could be easily ignored.",
+    },
+    {
+      src: sampleImage2,
+      scope: "Wheel Assembly",
+      damages: [
+        {
+          name: "Wheel rim scratches",
+          severity: "Moderate",
+          confidence: "92.5%",
+          cost: "$200.00",
+        },
+      ],
+      totalCost: "$200.00",
+      recommendation:
+        "Cosmetic damage only. Repair recommended for aesthetic purposes.",
+    },
+    {
+      src: sampleImage3,
+      scope: "Front Panel",
+      damages: [
+        {
+          name: "No damage detected",
+          severity: "None",
+          confidence: "98.0%",
+          cost: "$0.00",
+        },
+      ],
+      totalCost: "$0.00",
+      recommendation: "No damage detected. No action required.",
+    },
+    {
+      src: sampleImage4,
+      scope: "Front Bumper",
+      damages: [
+        {
+          name: "Surface scratches",
+          severity: "Minor",
+          confidence: "87.3%",
+          cost: "$150.00",
+        },
+        {
+          name: "Paint transfer",
+          severity: "Minor",
+          confidence: "75.8%",
+          cost: "$100.00",
+        },
+      ],
+      totalCost: "$250.00",
+      recommendation:
+        "Minor cosmetic damage. Touch-up paint may resolve most issues.",
+    },
+    {
+      src: sampleImage5,
+      scope: "Rear Bumper Corner",
+      damages: [
+        {
+          name: "Cracked bumper",
+          severity: "Severe",
+          confidence: "94.7%",
+          cost: "$450.00",
+        },
+        {
+          name: "Mounting damage",
+          severity: "Moderate",
+          confidence: "82.1%",
+          cost: "$150.00",
+        },
+      ],
+      totalCost: "$600.00",
+      recommendation:
+        "Bumper replacement recommended due to structural damage.",
+    },
+    {
+      src: sampleImage6,
+      scope: "Driver Door Panel",
+      damages: [
+        {
+          name: "Door ding",
+          severity: "Minor",
+          confidence: "89.5%",
+          cost: "$120.00",
+        },
+      ],
+      totalCost: "$120.00",
+      recommendation:
+        "Paintless dent repair possible. Quick and cost-effective solution.",
+    },
+    {
+      src: sampleImage7,
+      scope: "Side Mirror Assembly",
+      damages: [
+        {
+          name: "Broken casing",
+          severity: "Moderate",
+          confidence: "96.3%",
+          cost: "$180.00",
+        },
+      ],
+      totalCost: "$180.00",
+      recommendation: "Casing replacement recommended. Mirror glass intact.",
+    },
+    {
+      src: sampleImage8,
+      scope: "Headlight Assembly",
+      damages: [
+        {
+          name: "Cracked lens",
+          severity: "Severe",
+          confidence: "97.8%",
+          cost: "$320.00",
+        },
+      ],
+      totalCost: "$320.00",
+      recommendation:
+        "Full headlight assembly replacement required for safety.",
+    },
+    {
+      src: sampleImage9,
+      scope: "Vehicle Roof",
+      damages: [
+        {
+          name: "Multiple hail dents",
+          severity: "Moderate",
+          confidence: "88.4%",
+          cost: "$800.00",
+        },
+      ],
+      totalCost: "$800.00",
+      recommendation:
+        "Paintless dent repair recommended for multiple small impacts.",
+    },
+    {
+      src: sampleImage10,
+      scope: "Hood Panel",
+      damages: [
+        {
+          name: "Large central dent",
+          severity: "Moderate",
+          confidence: "92.1%",
+          cost: "$350.00",
+        },
+        {
+          name: "Paint cracking",
+          severity: "Minor",
+          confidence: "78.6%",
+          cost: "$150.00",
+        },
+      ],
+      totalCost: "$500.00",
+      recommendation:
+        "Panel repair and repaint required. Check for underlying damage.",
+    },
+    {
+      src: sampleImage11,
+      scope: "Taillight Assembly",
+      damages: [
+        {
+          name: "Broken lens",
+          severity: "Severe",
+          confidence: "99.1%",
+          cost: "$240.00",
+        },
+      ],
+      totalCost: "$240.00",
+      recommendation:
+        "Complete replacement required. Safety and legal compliance issue.",
+    },
+    {
+      src: sampleImage12,
+      scope: "Front Fender",
+      damages: [
+        {
+          name: "Dent with rust",
+          severity: "Severe",
+          confidence: "91.4%",
+          cost: "$400.00",
+        },
+        {
+          name: "Previous poor repair",
+          severity: "Moderate",
+          confidence: "84.2%",
+          cost: "$200.00",
+        },
+      ],
+      totalCost: "$600.00",
+      recommendation:
+        "Complete panel replacement recommended due to rust formation.",
+    },
   ];
+
+  const handleImageClick = (imageData) => {
+    setSelectedImage(imageData);
+    setImageModalOpen(true);
+  };
 
   return (
     <section
@@ -53,10 +249,14 @@ export default function TryDemoSection() {
         {/* Sample Images Grid */}
         <p className="text-lg font-semibold">Test With Sample Image</p>
         <div className="grid grid-cols-3 gap-3 mt-6">
-          {sampleImages.map((image, index) => (
-            <div key={index} className="w-40 h-14 rounded-sm overflow-hidden">
+          {sampleImagesData.map((imageData, index) => (
+            <div
+              key={index}
+              className="w-40 h-14 rounded-sm overflow-hidden cursor-pointer transition-all duration-200 hover:scale-110 hover:shadow-lg hover:z-10 relative"
+              onClick={() => handleImageClick(imageData)}
+            >
               <img
-                src={image}
+                src={imageData.src}
                 alt={`Sample ${index + 1}`}
                 className="w-full h-full object-cover"
               />
@@ -67,8 +267,8 @@ export default function TryDemoSection() {
         {/* Custom Demo Request Box */}
         <div
           className="border border-gray-300 p-6 rounded-lg mt-6 flex flex-col items-center 
-      hover:shadow-lg transition-shadow duration-300 cursor-pointer"
-          onClick={() => setModalOpen(true)}
+          hover:shadow-lg transition-shadow duration-300 cursor-pointer"
+          onClick={() => setContactModalOpen(true)}
         >
           <img src={upload} alt="Upload image" className="w-10 h-10 mb-3" />
           <p className="text-gray-700 text-center font-medium">
@@ -100,7 +300,7 @@ export default function TryDemoSection() {
           {/* Call to Action Button */}
           <button
             className="mt-[-80px] z-50 hover:cursor-pointer bg-[#3a3aea] text-white px-6 w-[200px] self-center rounded-lg h-[40px] font-medium"
-            onClick={() => setModalOpen(true)}
+            onClick={() => setContactModalOpen(true)}
           >
             Try Our Demo
           </button>
@@ -122,11 +322,11 @@ export default function TryDemoSection() {
       </div>
 
       {/* Contact Form Modal */}
-      {modalOpen && (
+      {contactModalOpen && (
         <div className="fixed inset-0 flex items-center justify-center bg-white/30 backdrop-blur-sm z-50">
           <div className="bg-white border w-full max-w-md mx-auto border-gray-200 shadow-2xl rounded-xl p-6 relative">
             <button
-              onClick={() => setModalOpen(false)}
+              onClick={() => setContactModalOpen(false)}
               className="absolute top-4 right-4 hover:cursor-pointer text-gray-600 hover:text-gray-900 text-2xl"
             >
               &times;
@@ -194,6 +394,102 @@ export default function TryDemoSection() {
                 Request Demo
               </button>
             </form>
+          </div>
+        </div>
+      )}
+
+      {/* Image Detail Modal - Updated to include the full image */}
+      {imageModalOpen && selectedImage && (
+        <div className="fixed inset-0 flex items-center justify-center bg-white/30 backdrop-blur-sm z-50">
+          <div className="bg-white border w-full max-w-4xl mx-auto border-gray-200 shadow-2xl rounded-xl overflow-hidden">
+            <div className="flex justify-between items-center p-4 border-b">
+              <div className="flex space-x-6">
+                <div>
+                  <p className="text-gray-500 font-medium">Analysis</p>
+                  <p className="font-semibold text-xl">{selectedImage.scope}</p>
+                </div>
+              </div>
+              <button
+                onClick={() => setImageModalOpen(false)}
+                className="hover:cursor-pointer text-gray-600 hover:text-gray-900 text-2xl"
+              >
+                &times;
+              </button>
+            </div>
+
+            <div className="flex flex-col md:flex-row">
+              {/* Image Column */}
+              <div className="md:w-2/5 p-4 border-r">
+                <img
+                  src={selectedImage.src}
+                  alt={selectedImage.scope}
+                  className="w-full h-auto rounded-lg shadow-md object-cover"
+                />
+              </div>
+
+              {/* Damage Details Column */}
+              <div className="md:w-3/5 p-4 overflow-y-auto max-h-[600px]">
+                <h3 className="font-semibold text-lg pb-2">Detected Damages</h3>
+
+                {selectedImage.damages.map((damage, index) => (
+                  <div key={index} className="py-4 border-b">
+                    <div className="flex justify-between items-center mb-2">
+                      <p className="font-medium">{damage.name}</p>
+                      <span
+                        className={`px-3 py-1 rounded-full text-sm ${
+                          damage.severity === "Minor"
+                            ? "bg-yellow-100 text-yellow-800"
+                            : damage.severity === "Moderate"
+                            ? "bg-orange-100 text-orange-800"
+                            : damage.severity === "Severe"
+                            ? "bg-red-100 text-red-800"
+                            : "bg-green-100 text-green-800"
+                        }`}
+                      >
+                        {damage.severity}
+                      </span>
+                    </div>
+
+                    <div className="grid grid-cols-2 gap-4">
+                      <div>
+                        <p className="text-gray-500">Confidence</p>
+                        <p className="font-medium">{damage.confidence}</p>
+                      </div>
+                      <div>
+                        <p className="text-gray-500">Est. Cost</p>
+                        <p className="font-medium">{damage.cost}</p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+
+                <div className="border-t py-4 flex justify-between items-center">
+                  <p className="font-semibold text-lg">Total Estimated Cost</p>
+                  <p className="font-bold text-xl text-blue-600">
+                    {selectedImage.totalCost}
+                  </p>
+                </div>
+
+                <div className="mt-4 p-4 bg-blue-50 rounded-lg">
+                  <p className="font-semibold text-blue-800">Recommendation</p>
+                  <p className="text-blue-800 mt-1">
+                    {selectedImage.recommendation}
+                  </p>
+                </div>
+
+                <div className="mt-6 flex justify-end">
+                  <button
+                    className="bg-[#3a3aea] text-white px-6 py-2 rounded-lg font-medium hover:bg-blue-700 transition-colors duration-200"
+                    onClick={() => {
+                      setImageModalOpen(false);
+                      setContactModalOpen(true);
+                    }}
+                  >
+                    Request Full Assessment
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       )}
