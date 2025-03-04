@@ -115,7 +115,12 @@ export default function HeroSection() {
       {/* Navbar */}
       <div className="w-full flex justify-between items-center py-4 px-10">
         <div>
-          <img src={logo} alt="Brand Logo" className="w-[250px]" />
+          <img
+            src={logo}
+            alt="Brand Logo"
+            className="w-[250px]"
+            loading="lazy"
+          />
         </div>
         <nav className="hidden md:flex space-x-9 text-black text-[25px] font-medium">
           <a href="#" className="hover:text-gray-600">
@@ -179,6 +184,7 @@ export default function HeroSection() {
               src={item.img}
               alt={item.label}
               className="w-[800px] h-[400px] object-cover rounded-xl"
+              loading="lazy"
             />
             <span className="absolute top-2 left-2 bg-[#0d76bf] text-white text-xl font-semibold px-2 py-1 rounded-md">
               {item.label}
