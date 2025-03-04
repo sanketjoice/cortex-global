@@ -1,33 +1,32 @@
-import React from "react";
+import React, { Suspense, lazy } from "react";
 import "./App.css";
-import HeroSection from "./HeroSection";
-import DamageDetectionSection from "./DamageDetectionSection";
-import TryDemoSection from "./TryDemoSection";
-import LeadingPerformance from "./LeadingPerformance";
-import FeaturesSection from "./FeaturesSection";
-import CoverageSection from "./CoverageSection";
-import BusinessApplications from "./BusinessApllications";
-import BenefitsForCarRentals from "./BenefitsForCarRentals";
-import TechnicalImplementation from "./TechnicalImplementation";
-// import CortexSection from "./CortexSection";
-// import ContactUs from "./ContactUs";
-import CortexContactSection from "./CortexContactSection";
+
+const HeroSection = lazy(() => import("./HeroSection"));
+const DamageDetectionSection = lazy(() => import("./DamageDetectionSection"));
+const TryDemoSection = lazy(() => import("./TryDemoSection"));
+const LeadingPerformance = lazy(() => import("./LeadingPerformance"));
+const FeaturesSection = lazy(() => import("./FeaturesSection"));
+const CoverageSection = lazy(() => import("./CoverageSection"));
+const BusinessApplications = lazy(() => import("./BusinessApllications"));
+const BenefitsForCarRentals = lazy(() => import("./BenefitsForCarRentals"));
+const TechnicalImplementation = lazy(() => import("./TechnicalImplementation"));
+const CortexContactSection = lazy(() => import("./CortexContactSection"));
 
 function App() {
   return (
     <div className="max-w-[1660px] m-auto">
-      <HeroSection />
-      <DamageDetectionSection />
-      <TryDemoSection />
-      <LeadingPerformance />
-      <FeaturesSection />
-      <CoverageSection />
-      <BusinessApplications />
-      <BenefitsForCarRentals />
-      <TechnicalImplementation />
-      <CortexContactSection />
-      {/* <CortexSection />
-      <ContactUs /> */}
+      <Suspense fallback={<div>Loading...</div>}>
+        <HeroSection />
+        <DamageDetectionSection />
+        <TryDemoSection />
+        <LeadingPerformance />
+        <FeaturesSection />
+        <CoverageSection />
+        <BusinessApplications />
+        <BenefitsForCarRentals />
+        <TechnicalImplementation />
+        <CortexContactSection />
+      </Suspense>
     </div>
   );
 }

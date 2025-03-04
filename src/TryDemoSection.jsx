@@ -246,7 +246,7 @@ export default function TryDemoSection() {
           The Most Advanced Vehicle Damage Detection
         </p>
 
-        {/* Sample Images Grid */}
+        {/* Sample Images Grid - KEPT ORIGINAL */}
         <p className="text-lg font-semibold">Test With Sample Image</p>
         <div className="grid grid-cols-3 gap-3 mt-6">
           {sampleImagesData.map((imageData, index) => (
@@ -276,7 +276,6 @@ export default function TryDemoSection() {
           </p>
         </div>
       </div>
-
       {/* Right Content */}
       <div className="lg:w-1/2 mt-[150px] flex flex-row items-center relative lg:mt-0">
         <div className="flex flex-col">
@@ -320,7 +319,6 @@ export default function TryDemoSection() {
           </div>
         </div>
       </div>
-
       {/* Contact Form Modal */}
       {contactModalOpen && (
         <div className="fixed inset-0 flex items-center justify-center bg-white/30 backdrop-blur-sm z-50">
@@ -397,11 +395,10 @@ export default function TryDemoSection() {
           </div>
         </div>
       )}
-
-      {/* Image Detail Modal - Updated to include the full image */}
+      {/* Image Detail Modal - ONLY ENLARGED THE POPUP IMAGE */}
       {imageModalOpen && selectedImage && (
         <div className="fixed inset-0 flex items-center justify-center bg-white/30 backdrop-blur-sm z-50">
-          <div className="bg-white border w-full max-w-4xl mx-auto border-gray-200 shadow-2xl rounded-xl overflow-hidden">
+          <div className="bg-white border w-full max-w-5xl mx-auto border-gray-200 shadow-2xl rounded-xl overflow-hidden">
             <div className="flex justify-between items-center p-4 border-b">
               <div className="flex space-x-6">
                 <div>
@@ -418,17 +415,19 @@ export default function TryDemoSection() {
             </div>
 
             <div className="flex flex-col md:flex-row">
-              {/* Image Column */}
-              <div className="md:w-2/5 p-4 border-r">
-                <img
-                  src={selectedImage.src}
-                  alt={selectedImage.scope}
-                  className="w-full h-auto rounded-lg shadow-md object-cover"
-                />
+              {/* Image Column - ENLARGED */}
+              <div className="md:w-3/5 p-6">
+                <div className="rounded-lg overflow-hidden shadow-md">
+                  <img
+                    src={selectedImage.src}
+                    alt={selectedImage.scope}
+                    className="w-full h-auto object-contain max-h-[600px]"
+                  />
+                </div>
               </div>
 
               {/* Damage Details Column */}
-              <div className="md:w-3/5 p-4 overflow-y-auto max-h-[600px]">
+              <div className="md:w-2/5 p-4 overflow-y-auto max-h-[600px]">
                 <h3 className="font-semibold text-lg pb-2">Detected Damages</h3>
 
                 {selectedImage.damages.map((damage, index) => (
