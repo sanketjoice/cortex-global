@@ -111,7 +111,7 @@ export default function HeroSection() {
   };
 
   return (
-    <div className="bg-white min-h-screen relative flex flex-col items-center px-10 md:px-16 lg:px-24 py-">
+    <div className="bg-white h-auto relative flex flex-col items-center px-10 md:px-16 lg:px-24">
       {/* Navbar */}
       <div className="w-full flex justify-between items-center py-4 px-10">
         <div>

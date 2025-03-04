@@ -67,7 +67,8 @@ export default function TryDemoSection() {
         {/* Custom Demo Request Box */}
         <div
           className="border border-gray-300 p-6 rounded-lg mt-6 flex flex-col items-center 
-              hover:shadow-lg transition-shadow duration-300"
+      hover:shadow-lg transition-shadow duration-300 cursor-pointer"
+          onClick={() => setModalOpen(true)}
         >
           <img src={upload} alt="Upload image" className="w-10 h-10 mb-3" />
           <p className="text-gray-700 text-center font-medium">
@@ -122,8 +123,8 @@ export default function TryDemoSection() {
 
       {/* Contact Form Modal */}
       {modalOpen && (
-        <div className="fixed inset-0 flex items-center justify-center max-w-[1660px] bg-white/30 backdrop-blur-sm z-50">
-          <div className="bg-white border max-w-md border-gray-200 shadow-2xl rounded-xl p-6 w-full relative">
+        <div className="fixed inset-0 flex items-center justify-center bg-white/30 backdrop-blur-sm z-50">
+          <div className="bg-white border w-full max-w-md mx-auto border-gray-200 shadow-2xl rounded-xl p-6 relative">
             <button
               onClick={() => setModalOpen(false)}
               className="absolute top-4 right-4 hover:cursor-pointer text-gray-600 hover:text-gray-900 text-2xl"

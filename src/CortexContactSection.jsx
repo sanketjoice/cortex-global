@@ -13,7 +13,7 @@ const CortexContactSection = () => {
       <section className="flex flex-col lg:flex-row items-center justify-between px-4">
         {/* Left Side - Image Grid */}
         <div className="grid grid-cols-2 grid-rows-2 w-5/12">
-          <div className="flex justify-center items-center p-">
+          <div className="flex justify-center items-center">
             <img
               src={img1}
               alt="Person 1"
