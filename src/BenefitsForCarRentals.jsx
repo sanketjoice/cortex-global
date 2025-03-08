@@ -91,7 +91,7 @@ export default function BenefitsForCarRentals() {
     );
   };
   return (
-    <section className="flex flex-col lg:flex-row items-center lg:items-start lg:ml-[-210px] ml-0 py-12 mb-[100px] px-4 sm:px-6 lg:px-0 lg:pr-28">
+    <section className="flex flex-col lg:flex-row items-center bg-[#fafafa] lg:items-start lg:ml-[-210px] ml-0 py-12 mb-[100px] px-4 sm:px-6 lg:px-0 lg:pr-28">
       {/* Left Side Image with Purple Shape */}
       <div className="relative w-full lg:w-1/2 flex justify-center mb-10 lg:mb-0">
         {/* Purple card only visible on desktop */}

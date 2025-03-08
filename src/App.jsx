@@ -14,17 +14,22 @@ const CortexContactSection = lazy(() => import("./CortexContactSection"));
 
 function App() {
   return (
-    <div className="max-w-[1660px] m-auto">
+    <div className="w-full">
       <Suspense fallback={<div>Loading...</div>}>
-        <HeroSection />
-        <DamageDetectionSection />
-        <TryDemoSection />
-        <LeadingPerformance />
-        <FeaturesSection />
-        <CoverageSection />
-        <BusinessApplications />
-        <BenefitsForCarRentals />
-        <TechnicalImplementation />
+        {/* Sections that don't need full width can use a container */}
+        <div className="max-w-[1660px] mx-auto">
+          <HeroSection />
+          <DamageDetectionSection />
+          <TryDemoSection />
+          <LeadingPerformance />
+          <FeaturesSection />
+          <CoverageSection />
+          <BusinessApplications />
+          <BenefitsForCarRentals />
+          <TechnicalImplementation />
+        </div>
+
+        {/* Contact section with blue background */}
         <CortexContactSection />
       </Suspense>
     </div>
