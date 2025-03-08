@@ -11,12 +11,12 @@ export default function BenefitsForCarRentals() {
     if (!isOpen) return null;
 
     return (
-      <div className="fixed  inset-0 flex items-center justify-center max-w-[1660px] bg-white/30 backdrop-blur-sm z-50">
+      <div className="fixed inset-0 flex items-center justify-center max-w-[1660px] bg-white/30 backdrop-blur-sm z-50">
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.8 }}
-          className="bg-white border max-w-md border-gray-200 shadow-2xl rounded-xl p-6 w-full relative"
+          className="bg-white border max-w-md mx-4 border-gray-200 shadow-2xl rounded-xl p-6 w-full relative"
         >
           <button
             onClick={onClose}
@@ -91,34 +91,39 @@ export default function BenefitsForCarRentals() {
     );
   };
   return (
-    <section className="flex flex-col lg:flex-row items-center lg:items-start ml-[-210px] lg:pr-28 py-12 mb-[100px]">
+    <section className="flex flex-col lg:flex-row items-center lg:items-start lg:ml-[-210px] ml-0 py-12 mb-[100px] px-4 sm:px-6 lg:px-0 lg:pr-28">
       {/* Left Side Image with Purple Shape */}
-      <div className="relative w-full lg:w-1/2 flex justify-center">
-        <img src={purpleCard} alt="" className="w-[400px] absolute" />
+      <div className="relative w-full lg:w-1/2 flex justify-center mb-10 lg:mb-0">
+        {/* Purple card only visible on desktop */}
+        <img
+          src={purpleCard}
+          alt=""
+          className="w-[400px] absolute hidden lg:block"
+        />
         <img
           src={crashPic}
           alt="Car Collision"
-          className="relative z-10 w-[400px] max-w-md lg:max-w-lg"
+          className="relative z-10 w-[300px] sm:w-[350px] lg:w-[400px] max-w-md lg:max-w-lg"
         />
       </div>
 
       {/* Right Side Content */}
-      <div className="w-full lg:w-1/2 lg:pl-12 mt-30">
-        <h2 className="text-7xl font-bold text-black">
+      <div className="w-full lg:w-1/2 lg:pl-12 mt-4 lg:mt-30">
+        <h2 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-black text-center lg:text-left">
           Benefits for Car <br /> Rentals
           <span className="text-[#642ec7]">.</span>
         </h2>
-        <p className="text-[#642ec7] text-2xl font-semibold mt-2">
+        <p className="text-[#642ec7] text-xl sm:text-2xl font-semibold mt-2 text-center lg:text-left">
           Stay Ahead with Continuous Innovation
         </p>
 
         <div className="mt-6 flex flex-col lg:flex-row gap-8">
           {/* Operational Improvements */}
           <div className="w-full lg:w-1/2">
-            <h3 className="text-xl font-semibold text-[#3a3aea]">
+            <h3 className="text-xl font-semibold text-[#3a3aea] text-center lg:text-left">
               Operational Improvements
             </h3>
-            <ul className="list-disc text-xl list-inside text-gray-700 mt-2">
+            <ul className="list-disc text-lg sm:text-xl list-inside text-gray-700 mt-2">
               <li>Standardized, error-reduced inspection processes.</li>
               <li>Comprehensive digital records for better decision-making.</li>
               <li>
@@ -129,11 +134,11 @@ export default function BenefitsForCarRentals() {
           </div>
 
           {/* Future Development Roadmap */}
-          <div className="w-full lg:w-1/2">
-            <h3 className="text-lg font-semibold text-[#3a3aea]">
+          <div className="w-full lg:w-1/2 mt-6 lg:mt-0">
+            <h3 className="text-lg font-semibold text-[#3a3aea] text-center lg:text-left">
               Future Development Roadmap
             </h3>
-            <ul className="list-disc text-xl list-inside text-gray-700 mt-2">
+            <ul className="list-disc text-lg sm:text-xl list-inside text-gray-700 mt-2">
               <li>Advanced 3D damage mapping for better visualization.</li>
               <li>Predictive maintenance alerts to prevent future issues.</li>
               <li>
@@ -144,12 +149,14 @@ export default function BenefitsForCarRentals() {
         </div>
 
         {/* Contact Us Button */}
-        <button
-          className="mt-10 w-[200px] bg-[#642ec7] text-white font-semibold px-6 py-3 rounded-lg shadow-md hover:bg-purple-700 transition"
-          onClick={() => setModalOpen(true)}
-        >
-          Contact Us
-        </button>
+        <div className="flex justify-center lg:justify-start">
+          <button
+            className="mt-10 w-[200px] bg-[#642ec7] text-white font-semibold px-6 py-3 rounded-lg shadow-md hover:bg-purple-700 transition"
+            onClick={() => setModalOpen(true)}
+          >
+            Contact Us
+          </button>
+        </div>
       </div>
       {/* Contact Form Modal */}
       <ContactFormModal

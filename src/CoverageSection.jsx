@@ -36,34 +36,39 @@ export default function CoverageSection() {
   ];
 
   return (
-    <section className="flex items-center justify-between lg:px-28 mb-[100px] py-20">
+    <section className="flex flex-col lg:flex-row items-center justify-between px-6 md:px-12 lg:px-28 mb-[100px] py-10 lg:py-20 gap-12 lg:gap-0">
       {/* Left Content */}
-      <div className="max-w-lg">
-        <h2 className="text-7xl font-bold leading-tight">
-          Ensuring Full <br /> Coverage
+      <div className="max-w-lg w-full">
+        <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold leading-tight text-center lg:text-left">
+          Ensuring Full <br className="hidden lg:block" /> Coverage
           <span className="text-yellow-500">.</span>
         </h2>
-        <h3 className="text-2xl font-bold text-purple-700 mt-4">
+        <h3 className="text-xl md:text-2xl font-bold text-purple-700 mt-4 text-center lg:text-left">
           Advanced Damage Recognition
         </h3>
-        <p className="text-gray-900 text-xl mt-4">
+        <p className="text-gray-900 text-lg md:text-xl mt-4 text-center lg:text-left">
           Detect every scratch and dent with unparalleled precision. Our system
           thoroughly scans all vehicle surfaces to ensure comprehensive damage
           assessment.
         </p>
         {/* Call to Action Button */}
-        <button
-          className="bg-[#642ec7] hover:cursor-pointer w-[200px] h-[50px] text-white px-6 py-2 rounded-2xl text-xl font-medium mt-8"
-          onClick={() => setModalOpen(true)}
-        >
-          Try Our Demo
-        </button>
+        <div className="flex justify-center lg:justify-start">
+          <button
+            className="bg-[#642ec7] hover:cursor-pointer w-[200px] h-[50px] text-white px-6 py-2 rounded-2xl text-xl font-medium mt-8"
+            onClick={() => setModalOpen(true)}
+          >
+            Try Our Demo
+          </button>
+        </div>
       </div>
 
       {/* Right Content */}
-      <div className="w-[45%] space-y-6">
+      <div className="w-full lg:w-[45%] space-y-6">
         {damageTypes.map((item, index) => (
-          <div key={index} className="flex items-center space-x-6">
+          <div
+            key={index}
+            className="flex flex-col md:flex-row items-center md:items-start space-y-4 md:space-y-0 md:space-x-6"
+          >
             {/* Image with border */}
             <div
               className={`w-[200px] rounded-4xl overflow-hidden border-r-6 border-t-6 ${item.borderColor}`}
@@ -76,18 +81,18 @@ export default function CoverageSection() {
             </div>
 
             {/* Text Content */}
-            <div>
-              <h4 className="text-2xl font-semibold text-purple-700 mb-2">
+            <div className="text-center md:text-left">
+              <h4 className="text-xl md:text-2xl font-semibold text-purple-700 mb-2">
                 {item.title}
               </h4>
-              <ul className="list-disc list-inside font-semibold text-gray-600 text-lg">
+              <ul className="list-disc list-inside font-semibold text-gray-600 text-base md:text-lg">
                 {item.features.map((feature, idx) => (
                   <li key={idx}>{feature}</li>
                 ))}
               </ul>
               <a
                 href="#"
-                className="text-purple-600 font-bold text-lg mt-1 inline-block"
+                className="text-purple-600 font-bold text-base md:text-lg mt-1 inline-block"
               >
                 View full list
               </a>
@@ -98,7 +103,7 @@ export default function CoverageSection() {
 
       {/* Modal for Requesting a Demo */}
       {modalOpen && (
-        <div className="fixed inset-0 flex items-center justify-center max-w-[1660px] bg-white/30 backdrop-blur-sm z-50">
+        <div className="fixed inset-0 flex items-center justify-center bg-white/30 backdrop-blur-sm z-50 px-4">
           <div className="bg-white border max-w-md border-gray-200 shadow-2xl rounded-xl p-6 w-full relative">
             <button
               onClick={() => setModalOpen(false)}

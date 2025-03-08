@@ -17,7 +17,7 @@ export default function BusinessApplications() {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.8 }}
-          className="bg-white border max-w-md border-gray-200 shadow-2xl rounded-xl p-6 w-full relative"
+          className="bg-white border max-w-md border-gray-200 shadow-2xl rounded-xl p-6 w-full mx-4 relative"
         >
           <button
             onClick={onClose}
@@ -96,18 +96,18 @@ export default function BusinessApplications() {
     <section className="flex flex-col lg:flex-row items-center mb-[100px] justify-between px-8 lg:px-28 py-16">
       {/* Left Content */}
       <div className="max-w-lg text-left">
-        <h2 className="text-7xl font-bold leading-tight">
+        <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
           Business <br /> Applications.
         </h2>
-        <p className="text-2xl font-semibold text-[#3a3aea] mt-4">
+        <p className="text-xl md:text-2xl font-semibold text-[#3a3aea] mt-4">
           Everything In The Palm of Your Hand.
         </p>
 
         <div className="mt-6">
-          <h3 className="text-2xl font-semibold text-[#3a3aea]">
+          <h3 className="text-xl md:text-2xl font-semibold text-[#3a3aea]">
             Mobile Application Feature
           </h3>
-          <ul className="list-disc list-inside text-gray-700 mt-2 text-xl space-y-1">
+          <ul className="list-disc list-inside text-gray-700 mt-2 text-lg md:text-xl space-y-1">
             <li>Guided photo capture for consistent image quality.</li>
             <li>Optional voice-annotated inspections for ease of use.</li>
             <li>Instant report generation and direct claim submissions.</li>
@@ -115,10 +115,10 @@ export default function BusinessApplications() {
         </div>
 
         <div className="mt-6">
-          <h3 className="text-2xl font-semibold text-[#3a3aea]">
+          <h3 className="text-xl md:text-2xl font-semibold text-[#3a3aea]">
             Exterior Damage Detection
           </h3>
-          <ul className="list-disc list-inside text-gray-700 text-xl mt-2 space-y-1">
+          <ul className="list-disc list-inside text-gray-700 text-lg md:text-xl mt-2 space-y-1">
             <li>Monitor inspections in real-time.</li>
             <li>Track and analyze fleet-wide damage.</li>
             <li>Manage customer histories and perform cost trend analysis.</li>
@@ -134,20 +134,28 @@ export default function BusinessApplications() {
       </div>
 
       {/* Right Content - Images */}
-      <div className="relative flex mt-12 mr-[100px] lg:mt-0">
-        <div className="">
+      <div className="relative flex mt-12 mr-0 lg:mr-[100px] lg:mt-0 flex-col sm:flex-row">
+        <div className="relative mx-auto sm:mx-0">
           <img
             src={logo}
             alt="logo"
-            className="absolute ml-[120px] mt-[65px] w-[170px]"
+            className="absolute ml-[120px] mt-[65px] w-[120px] sm:w-[170px]"
           />
-          <img src={phone1} alt="Automated Reporting" className="w-[400px]" />
+          <img
+            src={phone1}
+            alt="Automated Reporting"
+            className="w-[300px] sm:w-[350px] md:w-[400px]"
+          />
           <p className="text-center text-blue-700 font-semibold mt-[-80px]">
             Automated Reporting
           </p>
         </div>
-        <div className="ml-[-80px]">
-          <img src={phone2} alt="Damage Analysis" className="w-[400px]" />
+        <div className="ml-0 sm:ml-[-80px] mt-16 sm:mt-0 mx-auto sm:mx-0">
+          <img
+            src={phone2}
+            alt="Damage Analysis"
+            className="w-[300px] sm:w-[350px] md:w-[400px]"
+          />
           <p className="text-center text-blue-700 font-semibold mt-[-80px]">
             Damage Analysis
           </p>
